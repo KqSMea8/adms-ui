@@ -6,6 +6,7 @@ import HeaderAsideLayout from './layouts/HeaderAsideLayout';
 import NotFound from './pages/NotFound';
 
 import AdCampaign from './pages/AdCampaign'
+import Login from './pages/Login'
 
 const routerConfig = [
   {
@@ -19,6 +20,9 @@ const routerConfig = [
         component: AdCampaign,
       },
     ],
+  },{
+    path:'/login',
+    layout:Login,
   },
   {
     path: '*',

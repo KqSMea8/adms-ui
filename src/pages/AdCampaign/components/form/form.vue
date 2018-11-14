@@ -22,6 +22,7 @@
     </el-form>
 </template>
 <script>
+import {ADD_AD_CAMPAIGN_URL} from '@/api/urls'
     export default {
         name:'add-campaign',
         data() {
@@ -36,7 +37,17 @@
         },
         methods: {
             onSubmit() {
-                console.log('submit!');
+                console.log(this.form.date1)
+                 console.log(this.form.date1.getTime())
+                return
+                let self = this
+                this.$axios.post(ADD_AD_CAMPAIGN_URL,{
+                    mode:0,
+                    data:{
+                        name:self.form.name,
+                        budget:self.form.budget,
+                    }
+                })
             }
         }
     }
